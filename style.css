@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#gameContainer {
+  position: relative;
+  width: 800px;
+  height: 600px;
+}
+
+canvas {
+  border: 2px solid white;
+  background: #222;
+  display: block;
+}
+
+#goalGif {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
