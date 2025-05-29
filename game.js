@@ -348,6 +348,14 @@ function gameLoop() {
   }
 }
 
+const gradient = ctx.createLinearGradient(canvas.width / 2 - 100, 0, canvas.width / 2 + 100, 0);
+	gradient.addColorStop(0.0, 'red');
+	gradient.addColorStop(0.2, 'orange');
+	gradient.addColorStop(0.4, 'yellow');
+	gradient.addColorStop(0.6, 'green');
+	gradient.addColorStop(0.8, 'blue');
+	gradient.addColorStop(1.0, 'violet');
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(levelImage, 0, 0, canvas.width, canvas.height);
@@ -374,7 +382,7 @@ function draw() {
   }
   
   if (winner) {
-	  ctx.fillStyle = 'black';
+	  ctx.fillStyle = gradient;
 	  ctx.font = 'bold 40px sans-serif';
 	  ctx.textAlign = 'center';
 	  ctx.fillText(`${winner.name} WINS!`, canvas.width / 2, canvas.height / 2);
@@ -390,14 +398,6 @@ function drawCountdown() {
 	ctx.font = 'bold 36px sans-serif';
 	ctx.textAlign = 'center';
 	ctx.fillText('PLACE YOUR BETS!', canvas.width / 2, 100);
-
-	const gradient = ctx.createLinearGradient(canvas.width / 2 - 100, 0, canvas.width / 2 + 100, 0);
-	gradient.addColorStop(0.0, 'red');
-	gradient.addColorStop(0.2, 'orange');
-	gradient.addColorStop(0.4, 'yellow');
-	gradient.addColorStop(0.6, 'green');
-	gradient.addColorStop(0.8, 'blue');
-	gradient.addColorStop(1.0, 'violet');
 
 	ctx.fillStyle = gradient;
 	ctx.font = 'bold 28px sans-serif';
